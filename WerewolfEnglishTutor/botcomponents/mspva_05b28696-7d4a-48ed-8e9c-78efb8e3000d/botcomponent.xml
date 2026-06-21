@@ -1,0 +1,15 @@
+<botcomponent schemaname="mspva_05b28696-7d4a-48ed-8e9c-78efb8e3000d">
+  <category>Testing</category>
+  <componenttype>19</componenttype>
+  <description>How do I defend myself in English during the game?</description>
+  <iscustomizable>0</iscustomizable>
+  <name>How do I defend myself in English during the game?</name>
+  <parentbotcomponentid>
+    <schemaname>mspva_d25eb216-01e9-4f94-833e-7f7d87feec0d</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>new_WerewolfEnglishTutor</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

@@ -1,0 +1,168 @@
+kind: AdaptiveDialog
+modelDescription: "Topic 1 — Learn Vocabulary: This topic helps students learn English vocabulary and phrases for the Werewolf game. Trigger when someone asks to learn words, vocabulary, phrases, asks what words to know, or wants a vocabulary quiz for a specific role like werewolf, villager, prophet, witch, or hunter."
+beginDialog:
+  kind: OnRedirect
+  id: main
+  actions:
+    - kind: Question
+      id: question_0X7Hpo
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: Topic.role
+      prompt: |-
+        🎭Which role? <br />
+        你玩開邊隻角色？
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: Werewolf (狼人)
+              displayName: Werewolf (狼人)
+
+            - id: Prophet (先知)
+              displayName: Prophet (先知)
+
+            - id: Witch (巫婆)
+              displayName: Witch (巫婆)
+
+            - id: Villager (村民)
+              displayName: Villager (村民)
+
+        displayName: EmbeddedEntity-16uBNI
+
+    - kind: ConditionGroup
+      id: conditionGroup_JZ0kuU
+      conditions:
+        - id: conditionItem_eFmkkn
+          condition: =Topic.role = 'new_WerewolfEnglishTutor.topic.Vocabulary.main.question_0X7Hpo'.'Werewolf (狼人)'
+          actions:
+            - kind: SendActivity
+              id: sendActivity_pExCG6
+              activity: |-
+                📚 Werewolf Role 狼人角色 <br />
+                Essential English for playing Werewolf 玩狼人必備英文<br />
+                - **defend yourself** — 為自己辯護<br />
+
+                I need to defend myself — I'm just a villager.<br />我需要為自己辯護 — 我只係一個村民<br />
+                - **cover for** — 掩護<br />
+
+                I'll cover for you if they suspect you.<br />如果佢哋懷疑你，我會幫你。 <br />
+                - **suspicious behavior** — 可疑行為<br />
+
+                I noticed some suspicious behavior from Player 3 last night.<br />我尋晚留意到第三個玩家有啲可疑嘅行為。 <br />
+                - **pretend to be** — 假扮<br />
+
+                I'll pretend to be a villager and act innocent.<br />我會扮村民，扮無辜。<br />
+                - **eliminate** — 淘汰<br />
+
+                We eliminated Player 2 last night.<br />我哋尋晚淘汰咗第二個玩家。 <br />
+                - **blame someone else** — 嫁禍他人<br />
+
+                Try to blame Player 4 — they've been quiet all game.<br />試下嫁禍第四個玩家 — 佢哋成場比賽都係靜靜地。 <br />
+                - **voting pattern** — 投票模式<br />
+
+                Look at the voting pattern — Player 2 and 5 always vote together.<br />睇下投票模式 — 第二同第五個玩家永遠都係一齊投票。 <br />
+                ```
+
+                ```
+                - 
+
+            - kind: Question
+              id: question_Km1gTQ
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var1
+              prompt:
+              entity:
+                kind: EmbeddedEntity
+                definition:
+                  kind: ClosedListEntity
+                  items:
+                    - id: OK
+                      displayName: OK
+
+            - kind: ConditionGroup
+              id: conditionGroup_WQZUq1
+              conditions:
+                - id: conditionItem_xAGpj0
+                  condition: =Topic.Var1 = 'new_WerewolfEnglishTutor.topic.Vocabulary.main.question_Km1gTQ'.OK
+
+        - id: conditionItem_jdnu95
+          condition: =Topic.role = 'new_WerewolfEnglishTutor.topic.Vocabulary.main.question_0X7Hpo'.'Prophet (先知)'
+
+        - id: conditionItem_iFg1M1
+          condition: =Topic.role = 'new_WerewolfEnglishTutor.topic.Vocabulary.main.question_0X7Hpo'.'Witch (巫婆)'
+
+        - id: conditionItem_iu7pmY
+          condition: =Topic.role = 'new_WerewolfEnglishTutor.topic.Vocabulary.main.question_0X7Hpo'.'Villager (村民)'
+
+    - kind: Question
+      id: question_KUp4o7
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var2
+      prompt: Let's try a quiz! <br />睇下你熟唔熟先！
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: " OK"
+              displayName: " OK"
+
+            - id: OK
+              displayName: OK
+
+    - kind: ConditionGroup
+      id: conditionGroup_9tPWCJ
+      conditions:
+        - id: conditionItem_JV1UQN
+          condition: =Topic.Var2 = 'new_WerewolfEnglishTutor.topic.Vocabulary.main.question_KUp4o7'.OK
+
+    - kind: Question
+      id: question_sbJPSR
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.difficulty
+      prompt: What difficulty level?
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: basic
+              displayName: basic
+
+            - id: intermediate
+              displayName: intermediate
+
+            - id: advanced
+              displayName: advanced
+
+    - kind: ConditionGroup
+      id: conditionGroup_NNeb1e
+      conditions:
+        - id: conditionItem_HjXcc0
+          condition: =Topic.difficulty = 'new_WerewolfEnglishTutor.topic.Vocabulary.main.question_sbJPSR'.basic
+
+        - id: conditionItem_VeQySD
+          condition: =Topic.difficulty = 'new_WerewolfEnglishTutor.topic.Vocabulary.main.question_sbJPSR'.intermediate
+
+        - id: conditionItem_2GxQRV
+          condition: =Topic.difficulty = 'new_WerewolfEnglishTutor.topic.Vocabulary.main.question_sbJPSR'.advanced
+
+    - kind: HttpRequestAction
+      id: Xa06Lh
+      url: https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io/api/learning/vocabulary?role=werewolf&difficulty=intermediate
+
+    - kind: SendActivity
+      id: sendActivity_zfZ4nd
+      activity: "## abcd"
+
+inputType: {}
+outputType: {}

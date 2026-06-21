@@ -1,0 +1,15 @@
+<botcomponent schemaname="mspva_2222e8a4-0455-4cee-81a2-93be240dadf6">
+  <category>Testing</category>
+  <componenttype>19</componenttype>
+  <description>Can you review my mistakes from my last game?</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Can you review my mistakes from my last game?</name>
+  <parentbotcomponentid>
+    <schemaname>mspva_d25eb216-01e9-4f94-833e-7f7d87feec0d</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>new_WerewolfEnglishTutor</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

@@ -1,0 +1,59 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnConversationStart
+  id: main
+  actions:
+    - kind: Question
+      id: question_jrwv6f
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var1
+      prompt: |-
+        ✨What do you want to learn today？<br />
+        你今日想温咩呀？
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: 📚 Learn Vocabulary （學習生字）
+              displayName: 📚 Learn Vocabulary （學習生字）
+
+            - id: 🎯 Grammar Drills（文法練習）
+              displayName: 🎯 Grammar Drills（文法練習）
+
+            - id: ✨ Review My Mistakes（重温錯誤）
+              displayName: ✨ Review My Mistakes（重温錯誤）
+
+    - kind: ConditionGroup
+      id: conditionGroup_WEPYaK
+      conditions:
+        - id: conditionItem_KDwA4M
+          condition: =Topic.Var1 = 'new_WerewolfEnglishTutor.topic.ConversationStart.main.question_jrwv6f'.'📚 Learn Vocabulary （學習生字）'
+          actions:
+            - kind: BeginDialog
+              id: mE3msv
+              dialog: new_WerewolfEnglishTutor.topic.Vocabulary
+
+        - id: conditionItem_8j3loT
+          condition: =Topic.Var1 = 'new_WerewolfEnglishTutor.topic.ConversationStart.main.question_jrwv6f'.'🎯 Grammar Drills（文法練習）'
+          actions:
+            - kind: BeginDialog
+              id: pFCbxH
+              dialog: new_WerewolfEnglishTutor.topic.GrammarDrills_rgM
+
+        - id: conditionItem_z1j46x
+          condition: =Topic.Var1 = 'new_WerewolfEnglishTutor.topic.ConversationStart.main.question_jrwv6f'.'✨ Review My Mistakes（重温錯誤）'
+          actions:
+            - kind: BeginDialog
+              id: IHPhML
+              dialog: new_WerewolfEnglishTutor.topic.ReviewMistakes
+
+    - kind: SendActivity
+      id: sendMessage_M0LuhV
+      activity:
+        text:
+          - Hello, I'm {System.Bot.Name}. How can I help?
+        speak:
+          - Hello and thank you for calling {System.Bot.Name}, powered by generative AI. How may I help you today?

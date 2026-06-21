@@ -1,0 +1,7 @@
+kind: EvaluationData
+rows:
+  - source: Manual
+    input: What are the rules for the Werewolf game?
+
+extensionData:
+  displayOrder: "1781875638010"

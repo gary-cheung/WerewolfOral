@@ -1,0 +1,15 @@
+<botcomponent schemaname="mspva_8d504dab-8dd1-4c69-bd99-7b3cebb780f1">
+  <category>Testing</category>
+  <componenttype>19</componenttype>
+  <description>What are the rules for the Werewolf game?</description>
+  <iscustomizable>0</iscustomizable>
+  <name>What are the rules for the Werewolf game?</name>
+  <parentbotcomponentid>
+    <schemaname>mspva_d25eb216-01e9-4f94-833e-7f7d87feec0d</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>new_WerewolfEnglishTutor</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

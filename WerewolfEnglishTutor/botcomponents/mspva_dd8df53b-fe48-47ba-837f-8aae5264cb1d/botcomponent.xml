@@ -1,0 +1,15 @@
+<botcomponent schemaname="mspva_dd8df53b-fe48-47ba-837f-8aae5264cb1d">
+  <category>Testing</category>
+  <componenttype>19</componenttype>
+  <description>Can you give me grammar practice based on my game history?</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Can you give me grammar practice based on my game history?</name>
+  <parentbotcomponentid>
+    <schemaname>mspva_d25eb216-01e9-4f94-833e-7f7d87feec0d</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>new_WerewolfEnglishTutor</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

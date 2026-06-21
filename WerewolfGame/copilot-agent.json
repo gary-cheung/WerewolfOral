@@ -1,0 +1,92 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.0/schema.json",
+  "id": "werewolf-edu-agent",
+  "name": "Werewolf Edu Tutor",
+  "description": "English language tutor agent for the Werewolf educational game. Analyzes student speech for grammar accuracy, fluency, and natural expression. Generates comprehensive end-of-game learning reports with feedback on scenario adaptation, vocabulary, and debate cohesion.",
+  "type": "declarativeAgent",
+  "version": "1.0.0",
+  "publisher": {
+    "name": "WerewolfEdu",
+    "website": "https://github.com/your-org/werewolfedu"
+  },
+  "publishing": {
+    "targets": ["m365-copilot-chat"],
+    "methods": ["m365-agents-sdk", "azure-ai-agent-service"]
+  },
+  "capabilities": [
+    {
+      "name": "analyze_speech",
+      "description": "Analyze a student's English speech in the Werewolf game for grammar accuracy, fluency, and natural expression. Returns scores, corrected text, and specific improvements.",
+      "inputs": {
+        "text": {
+          "type": "string",
+          "description": "The student's speech text to analyze",
+          "required": true
+        },
+        "context": {
+          "type": "string",
+          "description": "Game context, e.g. 'Player is villager, day phase discussion'",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "generate_feedback",
+      "description": "Generate a comprehensive end-of-game English learning report for a student. Takes all their speeches, their Werewolf role, and difficulty level.",
+      "inputs": {
+        "allSpeeches": {
+          "type": "array",
+          "description": "All speech texts from the student during the game",
+          "required": true
+        },
+        "role": {
+          "type": "string",
+          "description": "The student's Werewolf role (villager, werewolf, seer, etc.)",
+          "required": true
+        },
+        "difficulty": {
+          "type": "string",
+          "description": "Difficulty level (beginner, intermediate, advanced)",
+          "required": true
+        }
+      }
+    }
+  ],
+  "actions": [
+    {
+      "type": "api",
+      "endpoint": "${AZURE_CONTAINER_APP_URL}/api/messages",
+      "method": "POST",
+      "auth": {
+        "type": "azure-ad",
+        "resource": "api://werewolf-edu"
+      }
+    },
+    {
+      "type": "api",
+      "endpoint": "${AZURE_CONTAINER_APP_URL}/api/agent/run",
+      "method": "POST",
+      "auth": {
+        "type": "azure-ad",
+        "resource": "api://werewolf-edu"
+      }
+    }
+  ],
+  "hosting": {
+    "provider": "azure",
+    "resources": [
+      {
+        "type": "containerApp",
+        "name": "wwedu-dev-api"
+      },
+      {
+        "type": "aiAgentService",
+        "name": "wwedu-dev-agent"
+      }
+    ]
+  },
+  "compliance": {
+    "dataHandling": "Student speech data is processed in-memory during the game and stored in Azure PostgreSQL for learning reports. No PII is shared with third parties.",
+    "ageRating": "13+"
+  }
+}

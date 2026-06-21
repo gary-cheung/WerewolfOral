@@ -1,0 +1,10 @@
+<botcomponent schemaname="new_WerewolfEnglishTutor.topic.Vocabulary">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>📚 Learn Vocabulary （學習生字）</name>
+  <parentbotid>
+    <schemaname>new_WerewolfEnglishTutor</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

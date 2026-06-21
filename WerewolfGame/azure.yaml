@@ -1,0 +1,60 @@
+# azure.yaml — Azure Developer CLI (azd) configuration
+# Single command: `azd up` provisions everything + deploys
+# https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/azd-schema
+name: werewolfedu
+metadata:
+  template: werewolfedu@0.0.1
+
+services:
+  # ── Backend: Container App (Express + WebSocket) ────────────────────────
+  api:
+    project: ./
+    language: ts
+    host: containerapp
+    docker:
+      path: ./Dockerfile
+      context: ./
+    env:
+      NODE_ENV: production
+      PORT: "5000"
+      AZURE_AI_AGENT_ENDPOINT: "${AZURE_AI_AGENT_ENDPOINT}"
+
+  # ── Frontend served by API (Express serveStatic in production) ──────────
+  # Static Web App disabled — Azure for Students policy blocks this resource type.
+  # web:
+  #   project: ./
+  #   language: ts
+  #   host: staticwebapp
+  #   build:
+  #     command: npm run build
+  #   output_location: dist
+
+hooks:
+  postprovision:
+    windows:
+      shell: pwsh
+      run: |
+        Write-Host "Publishing WerewolfEdu agent to M365 Copilot Chat..."
+        $env:AZURE_AI_AGENT_ENDPOINT = (azd env get-value AZURE_AI_AGENT_ENDPOINT)
+        $env:AZURE_CONTAINER_APP_URL = (azd env get-value CONTAINER_APP_URL)
+        npx tsx azure/publish-agent.ts
+
+        Write-Host "Seeding AI Search vocabulary index..."
+        $env:AZURE_AI_SEARCH_ENDPOINT = (azd env get-value AZURE_AI_SEARCH_ENDPOINT)
+        $env:AZURE_AI_SEARCH_KEY = (azd env get-value AZURE_AI_SEARCH_KEY)
+        npx tsx azure/seed-search.ts
+      interactive: true
+    posix:
+      shell: sh
+      run: |
+        echo "Publishing WerewolfEdu agent to M365 Copilot Chat..."
+        npx tsx azure/publish-agent.ts
+
+        echo "Seeding AI Search vocabulary index..."
+        npx tsx azure/seed-search.ts
+      interactive: true
+
+infra:
+  provider: bicep
+  path: azure
+  module: main

@@ -1,0 +1,10 @@
+<botcomponent schemaname="new_WerewolfEnglishTutor.topic.GrammarDrills_rgM">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>🎯 Grammar Drills（文法練習）</name>
+  <parentbotid>
+    <schemaname>new_WerewolfEnglishTutor</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

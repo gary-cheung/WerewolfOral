@@ -1,0 +1,15 @@
+<botcomponent schemaname="mspva_2632c525-9e17-4a17-8548-4ed99c18e30e">
+  <category>Testing</category>
+  <componenttype>19</componenttype>
+  <description>I want to practice debating in English for Werewolf. Can you help?</description>
+  <iscustomizable>0</iscustomizable>
+  <name>I want to practice debating in English for Werewolf. Can you help?</name>
+  <parentbotcomponentid>
+    <schemaname>mspva_d25eb216-01e9-4f94-833e-7f7d87feec0d</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>new_WerewolfEnglishTutor</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

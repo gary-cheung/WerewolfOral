@@ -1,0 +1,7 @@
+kind: EvaluationData
+rows:
+  - source: Manual
+    input: How do I defend myself in English during the game?
+
+extensionData:
+  displayOrder: "1781875638009"

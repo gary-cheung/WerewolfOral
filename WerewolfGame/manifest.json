@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.0",
+  "id": "04d22a52-86a0-4dcf-8453-a806a5ff6784",
+  "packageName": "com.werewolfedu.copilot",
+  "name": {
+    "short": "Werewolf Edu Tutor",
+    "full": "Werewolf Edu Tutor — English Learning Agent"
+  },
+  "developer": {
+    "name": "WerewolfEdu",
+    "websiteUrl": "https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io",
+    "privacyUrl": "https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io",
+    "termsOfUseUrl": "https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io"
+  },
+  "description": {
+    "short": "English tutor for the Werewolf educational game — speech analysis & feedback",
+    "full": "English language tutor agent for the Werewolf educational game. Analyzes student speech for grammar accuracy, fluency, and natural expression. Generates comprehensive end-of-game learning reports with feedback on scenario adaptation, vocabulary, and debate cohesion."
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#8B0000",
+  "bots": [
+    {
+      "botId": "04d22a52-86a0-4dcf-8453-a806a5ff6784",
+      "scopes": ["personal", "team", "groupChat"],
+      "supportsFiles": false,
+      "isNotificationOnly": false
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": [
+    "wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io"
+  ]
+}

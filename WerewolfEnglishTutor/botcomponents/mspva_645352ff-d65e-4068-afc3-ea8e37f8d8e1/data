@@ -1,0 +1,7 @@
+kind: EvaluationData
+rows:
+  - source: Manual
+    input: What does the guard role do in Werewolf?
+
+extensionData:
+  displayOrder: "1781875638004"

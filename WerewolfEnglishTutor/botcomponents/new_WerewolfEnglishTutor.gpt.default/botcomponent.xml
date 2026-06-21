@@ -1,0 +1,11 @@
+<botcomponent schemaname="new_WerewolfEnglishTutor.gpt.default">
+  <componenttype>15</componenttype>
+  <description>👋 Hello! I help with vocab, drills, role strategy, rules, and game review. What do you need?</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Werewolf English Tutor</name>
+  <parentbotid>
+    <schemaname>new_WerewolfEnglishTutor</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

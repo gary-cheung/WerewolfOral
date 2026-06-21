@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.19",
+  "version": "1.0.0",
+  "id": "04d22a52-86a0-4dcf-8453-a806a5ff6784",
+  "packageName": "com.werewolfedu.copilot",
+  "name": {
+    "short": "Werewolf Edu Tutor",
+    "full": "Werewolf Edu Tutor — English Learning Agent"
+  },
+  "developer": {
+    "name": "WerewolfEdu",
+    "websiteUrl": "https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io",
+    "privacyUrl": "https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io",
+    "termsOfUseUrl": "https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io"
+  },
+  "description": {
+    "short": "English tutor for the Werewolf educational game — speech analysis & feedback",
+    "full": "English language tutor agent for the Werewolf educational game. Analyzes student speech for grammar accuracy, fluency, and natural expression. Generates comprehensive end-of-game learning reports with feedback on scenario adaptation, vocabulary, and debate cohesion. Designed for Chinese university students practicing English through social deduction gameplay."
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#8B0000",
+  "bots": [
+    {
+      "botId": "04d22a52-86a0-4dcf-8453-a806a5ff6784",
+      "scopes": ["personal", "team", "groupChat"],
+      "supportsFiles": false,
+      "isNotificationOnly": false,
+      "commandLists": [
+        {
+          "scopes": ["personal", "team", "groupChat"],
+          "commands": [
+            {
+              "title": "Analyze Speech",
+              "description": "Analyze a student's English speech for grammar, fluency, and accuracy"
+            },
+            {
+              "title": "Generate Report",
+              "description": "Generate a comprehensive end-of-game English learning report"
+            },
+            {
+              "title": "Help",
+              "description": "Show what the Werewolf Edu Tutor can do"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "copilotExtensions": {
+    "declarativeCopilots": [
+      {
+        "id": "werewolf-edu-agent",
+        "name": "Werewolf Edu Tutor",
+        "description": "English language tutor for the Werewolf educational game. Analyzes student speech and generates learning reports.",
+        "instructions": "You are an English language tutor for Chinese university students playing a Werewolf social-deduction game. Help users analyze student speech for grammar accuracy, fluency, and natural expression. Generate comprehensive learning reports. Always be encouraging and constructive — these are learners practicing English. Never invent errors — only reference words and phrases the student actually used.",
+        "capabilities": [
+          {
+            "name": "analyze_speech",
+            "description": "Analyze a student's English speech for grammar accuracy and fluency"
+          },
+          {
+            "name": "generate_feedback",
+            "description": "Generate an end-of-game English learning report"
+          }
+        ],
+        "actions": [
+          {
+            "type": "api",
+            "endpoint": "https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io/api/messages",
+            "method": "POST"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": [
+    "wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io",
+    "*.azurecontainerapps.io"
+  ],
+  "webApplicationInfo": {
+    "id": "04d22a52-86a0-4dcf-8453-a806a5ff6784",
+    "resource": "https://RscPermission"
+  }
+}

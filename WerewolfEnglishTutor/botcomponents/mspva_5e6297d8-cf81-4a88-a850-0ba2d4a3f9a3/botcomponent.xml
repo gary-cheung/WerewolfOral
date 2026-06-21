@@ -1,0 +1,15 @@
+<botcomponent schemaname="mspva_5e6297d8-cf81-4a88-a850-0ba2d4a3f9a3">
+  <category>Testing</category>
+  <componenttype>19</componenttype>
+  <description>How do I link my account for personalized feedback?</description>
+  <iscustomizable>0</iscustomizable>
+  <name>How do I link my account for personalized feedback?</name>
+  <parentbotcomponentid>
+    <schemaname>mspva_d25eb216-01e9-4f94-833e-7f7d87feec0d</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>new_WerewolfEnglishTutor</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

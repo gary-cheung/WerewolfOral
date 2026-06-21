@@ -1,0 +1,15 @@
+<botcomponent schemaname="mspva_67f3e2a6-c559-465b-9f79-6383c9cc2a05">
+  <category>Testing</category>
+  <componenttype>19</componenttype>
+  <description>What vocabulary should I know if I play as the hunter?</description>
+  <iscustomizable>0</iscustomizable>
+  <name>What vocabulary should I know if I play as the hunter?</name>
+  <parentbotcomponentid>
+    <schemaname>mspva_d25eb216-01e9-4f94-833e-7f7d87feec0d</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>new_WerewolfEnglishTutor</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

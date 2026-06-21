@@ -1,0 +1,7 @@
+kind: EvaluationData
+rows:
+  - source: Manual
+    input: I want to practice debating in English for Werewolf. Can you help?
+
+extensionData:
+  displayOrder: "1781875638002"

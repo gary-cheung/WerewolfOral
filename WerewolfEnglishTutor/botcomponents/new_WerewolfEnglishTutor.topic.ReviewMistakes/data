@@ -1,0 +1,205 @@
+kind: AdaptiveDialog
+modelDescription: Reviews English mistakes from Werewolf games with explanations
+beginDialog:
+  kind: OnRedirect
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendActivity_yuBryI
+      activity: |-
+        ✨ Let's review your English mistakes!<br />
+        一齊重溫下你做錯嘅地方啦！
+
+    - kind: Question
+      id: question_hz3DqI
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var3
+      prompt:
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: OK
+              displayName: OK
+
+    - kind: ConditionGroup
+      id: conditionGroup_6GpNRH
+      conditions:
+        - id: conditionItem_ABCoA0
+          condition: =Topic.Var3 = 'new_WerewolfEnglishTutor.topic.ReviewMistakes.main.question_hz3DqI'.OK
+
+    - kind: SendActivity
+      id: sendActivity_c0Tyxg
+      activity:
+        text:
+          - "❌ 你講錯咗話: \"I think he is werewolf\" <br /> ✅ 正確嚟講係: \"I think he is the werewolf\""
+        attachments:
+          - kind: ImageCardTemplate
+            image: https://www.wikihow.com/images/thumb/0/0a/Werewolf-Abilities-Step-1.jpg/v4-728px-Werewolf-Abilities-Step-1.jpg.webp
+
+    - kind: Question
+      id: question_vR5lPp
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var4
+      prompt:
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: OK
+              displayName: OK
+
+    - kind: ConditionGroup
+      id: conditionGroup_2pqPoo
+      conditions:
+        - id: conditionItem_Xl7XmX
+          condition: =Topic.Var4 = 'new_WerewolfEnglishTutor.topic.ReviewMistakes.main.question_vR5lPp'.OK
+
+    - kind: Question
+      id: question_7YYzD2
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var1
+      prompt: |-
+        Do you understand why? <br />
+        你明唔明點解？
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: Yes! 明白！
+              displayName: Yes! 明白！
+
+            - id: Explain more! 再解釋吓！
+              displayName: Explain more! 再解釋吓！
+
+    - kind: ConditionGroup
+      id: conditionGroup_Q0tWhk
+      conditions:
+        - id: conditionItem_d6K7Hf
+          condition: =Topic.Var1 = 'new_WerewolfEnglishTutor.topic.ReviewMistakes.main.question_7YYzD2'.'Yes! 明白！'
+
+        - id: conditionItem_w8Ou0J
+          condition: =Topic.Var1 = 'new_WerewolfEnglishTutor.topic.ReviewMistakes.main.question_7YYzD2'.'Explain more! 再解釋吓！'
+          actions:
+            - kind: SendActivity
+              id: sendActivity_YPcXqs
+              activity: |-
+                💡 Missing article 'the'. 漏咗冠詞 'the' <br />
+                英文指定某人身份時要加 'the'。<br />
+                廣東話冇冠詞概念，呢個係香港學生常見錯誤。
+
+            - kind: Question
+              id: question_IMokJQ
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var5
+              prompt:
+              entity:
+                kind: EmbeddedEntity
+                definition:
+                  kind: ClosedListEntity
+                  items:
+                    - id: OK
+                      displayName: OK
+
+            - kind: ConditionGroup
+              id: conditionGroup_Qp9PVG
+              conditions:
+                - id: conditionItem_lhsLEq
+                  condition: =Topic.Var5 = 'new_WerewolfEnglishTutor.topic.ReviewMistakes.main.question_IMokJQ'.OK
+
+            - kind: SendActivity
+              id: sendActivity_gUKOFl
+              activity: |-
+                📊 Top tips 提提你:<br />
+                - 廣東話冇冠詞，每次講英文要特別留意 'the' 同 'a/an'<br />
+                - 避免直譯！'冇乜' ≠ 'no much'，係 'not much'<br />
+                - suggest 後面跟 -ing，唔係 to
+
+            - kind: Question
+              id: question_5StbQf
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var6
+              prompt:
+              entity:
+                kind: EmbeddedEntity
+                definition:
+                  kind: ClosedListEntity
+                  items:
+                    - id: OK
+                      displayName: OK
+
+            - kind: ConditionGroup
+              id: conditionGroup_eTn6RO
+              conditions:
+                - id: conditionItem_PmVeZI
+                  condition: =Topic.Var6 = 'new_WerewolfEnglishTutor.topic.ReviewMistakes.main.question_5StbQf'.OK
+
+            - kind: Question
+              id: question_tvqYV4
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var2
+              prompt: |-
+                ✏️ Want some practice? <br />
+                想唔想練習吓？
+              entity:
+                kind: EmbeddedEntity
+                definition:
+                  kind: ClosedListEntity
+                  items:
+                    - id: Yes 要
+                      displayName: Yes 要
+
+                    - id: No 唔使
+                      displayName: No 唔使
+
+            - kind: ConditionGroup
+              id: conditionGroup_s5QBJx
+              conditions:
+                - id: conditionItem_7AEE9k
+                  condition: =Topic.Var2 = 'new_WerewolfEnglishTutor.topic.ReviewMistakes.main.question_tvqYV4'.'Yes 要'
+
+                - id: conditionItem_OD7IWF
+                  condition: =Topic.Var2 = 'new_WerewolfEnglishTutor.topic.ReviewMistakes.main.question_tvqYV4'.'No 唔使'
+
+            - kind: Question
+              id: question_wjT8yl
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var7
+              prompt: |-
+                Generating Questions... <br />
+                ```
+                生成緊練習題<br />
+                ```
+              entity:
+                kind: EmbeddedEntity
+                definition:
+                  kind: ClosedListEntity
+                  items:
+                    - id: OK
+                      displayName: OK
+
+            - kind: ConditionGroup
+              id: conditionGroup_0Ozpyr
+              conditions:
+                - id: conditionItem_4j5Drn
+                  condition: =Topic.Var7 = 'new_WerewolfEnglishTutor.topic.ReviewMistakes.main.question_wjT8yl'.OK
+
+inputType: {}
+outputType: {}

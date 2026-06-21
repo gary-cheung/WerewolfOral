@@ -1,0 +1,15 @@
+<botcomponent schemaname="mspva_11f72380-4807-43a7-a3f1-ba0eaf6a5adb">
+  <category>Testing</category>
+  <componenttype>19</componenttype>
+  <description>Can you explain the strategy for playing as the witch?</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Can you explain the strategy for playing as the witch?</name>
+  <parentbotcomponentid>
+    <schemaname>mspva_d25eb216-01e9-4f94-833e-7f7d87feec0d</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>new_WerewolfEnglishTutor</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

@@ -1,0 +1,23 @@
+kind: AdaptiveDialog
+modelDescription: practice grammar, give me drills, grammar exercises, test my English, drills please
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent: {}
+  actions:
+    - kind: HttpRequestAction
+      id: cAxCb7
+      method: Post
+      url: https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io/api/learning/drills
+      body:
+        kind: JsonRequestContent
+        content:
+          count: 5
+          difficulty: intermediate
+
+    - kind: SendActivity
+      id: sendActivity_BNMZGM
+      activity: Show one drill at a time with options A-D, wait for answer
+
+inputType: {}
+outputType: {}
