@@ -9,7 +9,7 @@
 
 | Resource | Link |
 |----------|------|
-| 🎥 **Demo / Walkthrough Video** | [Watch on YouTube](https://www.youtube.com/watch?v=UW-Mcw62uJk) |
+| 🎥 **Demo / Walkthrough Video** | [Watch on YouTube](https://youtu.be/WKSFUKXCd3E) |
 | 📊 **Pitch Deck** | [View on Canva](https://canva.link/12nfr334lbxetuw) |
 | 🌐 **Live Website** | [wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io](https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io) |
 | 💬 **Copilot Chat** | `@Werewolf English Tutor` (Microsoft 365 Copilot) |
@@ -153,7 +153,7 @@ Import `WerewolfEnglishTutor/` into **Microsoft Copilot Studio** as a declarativ
 
 ## 🔗 Links
 
-- 🎥 **Demo / Walkthrough Video**: [https://www.youtube.com/watch?v=UW-Mcw62uJk](https://www.youtube.com/watch?v=UW-Mcw62uJk)
+- 🎥 **Demo / Walkthrough Video**: [https://youtu.be/WKSFUKXCd3E](https://youtu.be/WKSFUKXCd3E)
 - 📊 **Pitch Deck**: [https://canva.link/12nfr334lbxetuw](https://canva.link/12nfr334lbxetuw)
 - 🌐 **Website**: [https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io](https://wwedu-api.gentlefield-5dac8c80.spaincentral.azurecontainerapps.io)
 - 💬 **Copilot Chat**: `@Werewolf English Tutor` (Microsoft 365 Copilot)
